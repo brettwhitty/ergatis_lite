@@ -1,5 +1,7 @@
 package ErgatisLite::ErgatisComponent;
 
+## Brett Whitty, JCVI, 2007
+
 use ErgatisLite::ErgatisComponentConfig;
 
 sub new {
