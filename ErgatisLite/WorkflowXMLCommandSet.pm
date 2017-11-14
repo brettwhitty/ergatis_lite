@@ -1,5 +1,7 @@
 package ErgatisLite::WorkflowXMLCommandSet;
 
+## Brett Whitty, JCVI, 2007
+
 use strict;
 use warnings;
 
