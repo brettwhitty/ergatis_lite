@@ -1,5 +1,5 @@
 # Ergatis Lite
-## Brett Whitty, 2007
+### Brett Whitty, JCVI, 2007
 
 "Ergatis Lite" is an abandoned side-project I started at JCVI in 2007.
 
