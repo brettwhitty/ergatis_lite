@@ -1,7 +1,6 @@
 # Ergatis Lite
-### Brett Whitty, JCVI, 2007
 
-"Ergatis Lite" is an abandoned side-project I started at JCVI in 2007.
+"Ergatis Lite" is an abandoned side-project [Brett Whitty](http://github.com/brettwhitty) started at JCVI in 2007.
 
 The idea was to create a generic command-line tool that would allow the configuring and launching of Ergatis components or pipelines
 using an Ergatis/Workflow install without any dependency on the web interface.
@@ -35,3 +34,6 @@ I ended up misplacing this code when I relocated to MSU in Jan 2008, so developm
 I'll need to confirm, but from skimming the code and memory I believe that the code for actually generating a runnable Ergatis/Workflow XML template is pretty far along.
 
 I think most of the work to be done was writing the code that turns the component config variables into command line flags and implementing the various new features supported by the text templating language. Will need to take a closer look and update this README.
+
+#### Author
+Brett Whitty, 2017
