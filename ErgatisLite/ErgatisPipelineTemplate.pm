@@ -79,18 +79,21 @@ sub parseBrackets {
         return;
     }
     if ($brackets =~ /[\,\{\(\<]/) {
+        ## '()' encloses a 'serial' command set
         if ($brackets =~ /^\(/) {
             my ($group, $rest) = _bracketStrip($brackets);
             my $element = new ErgatisLite::WorkflowXMLCommandSet(type=>'serial');
             $parent_element->addChild($element);
             $self->parseBrackets($group, $element);
             $self->parseBrackets($rest, $parent_element);
+        ## '{}' encloses a 'parallel' command set          
         } elsif ($brackets =~ /^\{/) {
             my ($group, $rest) = _bracketStrip($brackets);
             my $element = new ErgatisLite::WorkflowXMLCommandSet(type=>'parallel');
             $parent_element->addChild($element);
             $self->parseBrackets($group, $element);
             $self->parseBrackets($rest, $parent_element);
+        ## '<>' encloses a component definition
         } elsif ($brackets =~ /^\</) {
             my ($component_definition, $rest) = _bracketStrip($brackets);
             ## if ($component_definition =~ /INCLUDE:(.*)/) {
@@ -102,12 +105,14 @@ sub parseBrackets {
             $parent_element->addChild(new ErgatisLite::WorkflowXMLCommandSet(type=>'serial', name=>$component_name));
             ## }
             $self->parseBrackets($rest, $parent_element);
+        ## not sure, but appears that naked string is handled as a component name
         } elsif ($brackets =~ /^([^,]+)[,]?(.*)/) {
             my $element = new ErgatisLite::WorkflowXMLCommandSet(type=>'serial', name=>$1);
             $parent_element->addChild($element);
             $self->parseBrackets($2, $parent_element);
         }    
     } else {
+        ## no brackets, so again seems to be handled as component name
         $parent_element->addChild(new ErgatisLite::WorkflowXMLCommandSet(type=>'serial', name=>$brackets));
     }
 }
