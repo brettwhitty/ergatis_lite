@@ -211,15 +211,15 @@ sub _parseComponent {
     ##
     my ($component_name, $attribute_string) = split(":", $component_def, 2);
 
-    my @attributes = ();
+    my @attribute_kv_strings = ();
     if ($attribute_string) {
-        @attributes = split(";", $attribute_string);
+        @attribute_kv_strings = split(";", $attribute_string);
     }
 
     my %attributes = ();
-    foreach my $attribute(@attributes) {
-        if ($attribute) {
-            my ($key, $value) = split("=", $attribute, 2);
+    foreach my $attribute_kv_string(@attribute_kv_strings) {
+        if ($attribute_kv_string) {
+            my ($key, $value) = split("=", $attribute_kv_string, 2);
             $attributes{$key} = $value;
         }
     }
