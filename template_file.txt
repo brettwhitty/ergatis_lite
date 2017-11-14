@@ -1,0 +1,23 @@
+# input_file=/usr/local/scratch/bwhitty/test.fsa
+# remote_input_file=@ftp://some/url/to/file.fsa
+# remote_input_archive=@http://some/url/to/file.tgz
+(
+    <some_item.token:input_file=>,
+    {
+        (
+            <serial_item1>,
+            <serial_item2>,
+            <serial_item3>
+        ),
+        <another_item.token2:key=value;input_file_list=[some_item.token];>,
+        (
+            <serial_item_set:some_flag=value;&database=/some/database/list_file.list>
+        )
+        
+    },
+    (
+        <serial_group_member1>,
+        <serial_group_member2>
+    ),
+    <final_item>
+)
