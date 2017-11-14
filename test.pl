@@ -1,4 +1,7 @@
 #!/usr/local/bin/perl
+
+## Brett Whitty, JCVI, 2007
+
 use strict;
 use warnings;
 use ErgatisLite::ErgatisPipelineTemplate;
