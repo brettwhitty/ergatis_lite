@@ -1,5 +1,7 @@
 package ErgatisLite::ErgatisComponentConfig;
 
+## Brett Whitty, JCVI, 2007
+
 use ErgatisLite::Config;
 use Config::IniFiles;
 use Carp;
