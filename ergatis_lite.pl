@@ -1,5 +1,7 @@
 #!/usr/local/bin/perl
 
+## Brett Whitty, JCVI, 2007
+
 use lib "/usr/local/devel/ANNOTATION/bwhitty/lib/5.8.8";
 use strict;
 use warnings;
